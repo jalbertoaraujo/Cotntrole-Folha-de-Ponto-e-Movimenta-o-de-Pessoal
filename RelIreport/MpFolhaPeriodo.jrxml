@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PontoEpi" language="groovy" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d3e312b-332f-46d4-8d92-82aa4530bd75">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="39793e06-2624-48bf-8859-bf45bfa486c7"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Informatica01\\workspace\\ProtocoloPontoEpi\\RelIreport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from folha]]>
+	</queryString>
+	<field name="id_folha" class="java.lang.Integer"/>
+	<field name="periodo" class="java.lang.String"/>
+	<field name="funcionario" class="java.lang.String"/>
+	<field name="data" class="java.lang.String"/>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="mudancadepto" class="java.lang.String"/>
+	<field name="mudancahorario" class="java.lang.String"/>
+	<field name="jornada" class="java.lang.String"/>
+	<field name="intervalo" class="java.lang.String"/>
+	<field name="alteracao" class="java.lang.String"/>
+	<field name="obsalteracao" class="java.lang.String"/>
+	<field name="insalubridade" class="java.lang.String"/>
+	<field name="periculosidade" class="java.lang.String"/>
+	<field name="adicionalnoturno" class="java.lang.String"/>
+	<field name="gratificacao" class="java.lang.String"/>
+	<field name="outro" class="java.lang.String"/>
+	<field name="insalubridaderetro" class="java.lang.String"/>
+	<field name="periculosidaderetro" class="java.lang.String"/>
+	<field name="adicionalnoturnoretro" class="java.lang.String"/>
+	<field name="gratificacaoretro" class="java.lang.String"/>
+	<field name="outroretro" class="java.lang.String"/>
+	<field name="valorretro" class="java.lang.String"/>
+	<field name="parcelaretro" class="java.lang.String"/>
+	<field name="situacaomp" class="java.lang.String"/>
+	<field name="validar" class="java.lang.String"/>
+	<field name="obs" class="java.lang.String"/>
+	<field name="datainicio" class="java.lang.String"/>
+	<field name="info" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="13" width="340" height="24" uuid="0c69ddd3-013f-4aaa-94fb-3e115e1e1c83"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOVIMENTAÇÃO DE PESSOAL  POR PERÍODO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="39" width="51" height="20" uuid="4913fb30-74f4-4314-8f82-1c973706fb45"/>
+				<text><![CDATA[Folha]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="725" y="49" width="75" height="20" uuid="1a25bfbb-1ed1-481a-8d89-21ed0b99872b"/>
+				<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="66" width="802" height="1" uuid="615e5d7d-c7e4-41b0-b48b-4d4ee4e81a79"/>
+			</line>
+			<staticText>
+				<reportElement x="678" y="49" width="45" height="20" uuid="791c5102-a4c4-4516-beac-275589496e17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Período -]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="96" y="1" width="33" height="20" uuid="67378bbc-d7ad-4498-b665-6a00547dd4ba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="48" height="20" uuid="c7015166-e22b-4879-af83-fa79a4c19b7e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matrícula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="2" width="83" height="20" uuid="bd7551ae-f282-4eaa-b080-578dd778c02a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mudança Depto.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="2" width="88" height="20" uuid="8060e428-686f-44fd-bd2b-7d17ef40603a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mudança Horário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="2" width="46" height="20" uuid="21a5677f-1393-4028-a486-2fc9ad88237b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jornada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="663" y="2" width="24" height="20" uuid="f2587d3c-7d58-4803-a9d4-940a8e42d549"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Obs]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="50" y="2" width="129" height="20" uuid="545e3c90-4113-4c85-bb93-0a2e3ee60845"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="48" height="20" uuid="6303770a-1881-4ccc-bfc1-e2a0d925961b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="181" y="3" width="140" height="20" uuid="b81baf26-1c42-485d-935c-7b96778feb83"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mudancadepto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="324" y="3" width="121" height="20" uuid="f109afd5-573b-4b0c-a060-75faeb3fda38"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mudancahorario}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="448" y="3" width="116" height="20" uuid="450f61e2-912d-428d-86da-44e37826099f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jornada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="567" y="3" width="233" height="20" uuid="76368567-2f4b-4e96-846d-8d6faabf09f7"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{obs}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="680" y="3" width="80" height="20" uuid="d5445aba-3f32-4086-8ca0-8ae0c461792d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="760" y="3" width="40" height="20" uuid="d3ced98f-2ba5-4dbd-8459-2a1759d18465"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

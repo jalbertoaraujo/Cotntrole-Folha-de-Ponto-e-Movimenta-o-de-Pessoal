@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PontoEpi" language="groovy" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d3e312b-332f-46d4-8d92-82aa4530bd75">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Informatica01\\workspace\\ProtocoloPontoEpi\\RelIreport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from colaborador where periodo = 'Maio/21']]>
+	</queryString>
+	<field name="id_colaborador" class="java.lang.Integer"/>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="contrato" class="java.lang.String"/>
+	<field name="funcao" class="java.lang.String"/>
+	<field name="admissao" class="java.lang.String"/>
+	<field name="periodo" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="verificado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="246" y="4" width="313" height="24" uuid="0c69ddd3-013f-4aaa-94fb-3e115e1e1c83"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[ Situação Geral do Ponto Por Contrato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="737" y="28" width="62" height="20" uuid="a8e3c01b-27f0-4aea-9b73-84d8ed67c755"/>
+				<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="687" y="28" width="50" height="20" uuid="ec265a97-c9cb-47fe-af7c-88f47739a829"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Período - ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="28" width="799" height="1" uuid="9520eb3f-3869-4c8f-b0e9-edfdac99416a"/>
+			</line>
+			<line>
+				<reportElement x="0" y="3" width="799" height="1" uuid="9486e287-20e3-4864-8072-b64e20b42256"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="8" width="53" height="20" uuid="59a56197-2d52-49b2-9aa7-48580f0308ce"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matrícula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="8" width="36" height="20" uuid="2a9d46d8-5052-42ec-8488-b74fd77c553d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="8" width="46" height="20" uuid="fe077c5b-9e75-49af-92fa-9328c463ba9c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contrato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="539" y="8" width="47" height="20" uuid="30815626-6522-4757-a3bd-51bd48767dde"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Função]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="8" width="57" height="20" uuid="01e4279a-eac9-4cda-89d8-a32c80d597d5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admissão]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="741" y="8" width="59" height="20" uuid="5a6acabe-1c95-4918-9a2b-8c0f8952ce38"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="53" height="20" uuid="97a4fe74-ae1b-48e5-9255-b758c76ec143"/>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="244" height="20" uuid="348f18b3-0308-4ec5-83b4-83adb9e51cec"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="195" height="20" uuid="f17f71b4-073a-4f05-a84b-84a48a89f310"/>
+				<textFieldExpression><![CDATA[$F{contrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="0" width="100" height="20" uuid="332db185-ccb9-4dad-b83e-a729b756c427"/>
+				<textFieldExpression><![CDATA[$F{funcao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="623" y="0" width="100" height="20" uuid="a5f7628c-d56e-4908-8411-152cc03a2c9c"/>
+				<textFieldExpression><![CDATA[$F{admissao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="730" y="0" width="70" height="20" uuid="1567f758-fa12-473e-80ba-f6bc4759c268"/>
+				<textFieldExpression><![CDATA[$F{verificado} != null ? $F{verificado} : "---"
+]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="679" y="3" width="80" height="20" uuid="155dc0be-10c5-4449-93b1-86307e0f7db7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="759" y="3" width="40" height="20" uuid="a6fbe5da-8e93-4bad-b6e0-b06003dd7d6a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="24">
+			<textField>
+				<reportElement x="679" y="0" width="80" height="20" uuid="d5445aba-3f32-4086-8ca0-8ae0c461792d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="759" y="0" width="40" height="20" uuid="d3ced98f-2ba5-4dbd-8459-2a1759d18465"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="46">
+			<staticText>
+				<reportElement x="668" y="14" width="89" height="20" uuid="2eeb94a1-8114-4e3a-9401-048644f01b87"/>
+				<text><![CDATA[Total de Registros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="757" y="14" width="42" height="20" uuid="68ad4ccd-2a12-47e3-833a-b48d1ffdb16f"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="668" y="34" width="131" height="1" uuid="5f8ba54d-fbbc-4d6d-997e-50ed3d29dc78"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

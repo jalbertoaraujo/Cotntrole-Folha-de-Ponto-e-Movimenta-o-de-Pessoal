@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PontoEpi" language="groovy" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d3e312b-332f-46d4-8d92-82aa4530bd75">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="39793e06-2624-48bf-8859-bf45bfa486c7"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Informatica01\\workspace\\ProtocoloPontoEpi\\RelIreport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT contrato, Count(contrato) AS Faltantes FROM colaborador where tipo = 'MANUAL' and verificado = '---' GROUP BY contrato order by contrato]]>
+	</queryString>
+	<field name="contrato" class="java.lang.String"/>
+	<field name="faltantes" class="java.lang.Long"/>
+	<variable name="variable1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{faltantes}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="10" width="306" height="24" uuid="0c69ddd3-013f-4aaa-94fb-3e115e1e1c83"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Geral de Pontos Devolvidos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="66" width="555" height="1" uuid="615e5d7d-c7e4-41b0-b48b-4d4ee4e81a79"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="24" width="555" height="1" uuid="54789474-490a-49e7-aac7-fed3304cf3de"/>
+			</line>
+			<staticText>
+				<reportElement x="141" y="0" width="57" height="20" uuid="1b94d3f5-212f-4e5d-9e79-719dfc4ede73"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contrato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="0" width="128" height="20" uuid="5a87ac3f-bd6a-4d3e-b339-9c5fa6ff7fd7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Pontos Faltantes]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="27" y="0" width="357" height="20" uuid="ee3faa42-4270-4ed9-9a8a-2a83566d5140"/>
+				<textFieldExpression><![CDATA[$F{contrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="105" height="20" uuid="02d460e9-98c0-4f0a-8c4c-71fc67da6b7b"/>
+				<textFieldExpression><![CDATA[$F{faltantes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="431" y="0" width="80" height="20" uuid="d5445aba-3f32-4086-8ca0-8ae0c461792d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="511" y="0" width="40" height="20" uuid="d3ced98f-2ba5-4dbd-8459-2a1759d18465"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="37">
+			<textField>
+				<reportElement x="431" y="12" width="80" height="20" uuid="67c5b876-393f-43e8-b954-b9738dd3a55f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="511" y="12" width="40" height="20" uuid="d7c9d60d-acf6-42f1-8345-78cfc895c0d2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="78">
+			<staticText>
+				<reportElement x="269" y="39" width="201" height="20" uuid="64b0608b-f02c-493f-9e1b-2099d2a968a3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Pontos Devolvidos No Período -]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="30" width="555" height="1" uuid="d2d351cd-f886-4662-a689-b5aa4bb8efd4"/>
+			</line>
+			<line>
+				<reportElement x="0" y="63" width="555" height="1" uuid="9192494b-43c1-481e-b065-548654682502"/>
+			</line>
+			<textField>
+				<reportElement x="470" y="39" width="85" height="20" uuid="9dec4228-c9f5-47eb-88f0-1b4fdb3b6715"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

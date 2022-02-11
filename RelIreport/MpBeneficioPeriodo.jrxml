@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PontoEpi" language="groovy" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d3e312b-332f-46d4-8d92-82aa4530bd75">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="39793e06-2624-48bf-8859-bf45bfa486c7"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Informatica01\\workspace\\ProtocoloPontoEpi\\RelIreport\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from beneficio]]>
+	</queryString>
+	<field name="id_beneficio" class="java.lang.Integer"/>
+	<field name="periodo" class="java.lang.String"/>
+	<field name="funcionario" class="java.lang.String"/>
+	<field name="data" class="java.lang.String"/>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="vavr" class="java.lang.String"/>
+	<field name="cb" class="java.lang.String"/>
+	<field name="vt" class="java.lang.String"/>
+	<field name="alteraquantidade" class="java.lang.String"/>
+	<field name="mudaendereco" class="java.lang.String"/>
+	<field name="obsmuda" class="java.lang.String"/>
+	<field name="tarifa" class="java.lang.String"/>
+	<field name="anel" class="java.lang.String"/>
+	<field name="obsanel" class="java.lang.String"/>
+	<field name="situacaomp" class="java.lang.String"/>
+	<field name="validar" class="java.lang.String"/>
+	<field name="obs" class="java.lang.String"/>
+	<field name="datainicio" class="java.lang.String"/>
+	<field name="info" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="13" width="340" height="24" uuid="0c69ddd3-013f-4aaa-94fb-3e115e1e1c83"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MOVIMENTAÇÃO DE PESSOAL  POR PERÍODO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="39" width="51" height="20" uuid="4913fb30-74f4-4314-8f82-1c973706fb45"/>
+				<text><![CDATA[Benefício]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="725" y="49" width="75" height="20" uuid="1a25bfbb-1ed1-481a-8d89-21ed0b99872b"/>
+				<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="66" width="802" height="1" uuid="615e5d7d-c7e4-41b0-b48b-4d4ee4e81a79"/>
+			</line>
+			<staticText>
+				<reportElement x="678" y="49" width="45" height="20" uuid="791c5102-a4c4-4516-beac-275589496e17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Período -]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="96" y="1" width="33" height="20" uuid="67378bbc-d7ad-4498-b665-6a00547dd4ba"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="48" height="20" uuid="c7015166-e22b-4879-af83-fa79a4c19b7e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matrícula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="2" width="72" height="20" uuid="8aeecfc1-3537-4453-9c28-54c7e08c1c04"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Obs Mudança]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="585" y="2" width="26" height="20" uuid="a6e66d6f-2f83-4fbb-b31e-2bb7035b7895"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Obs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="740" y="4" width="60" height="20" uuid="a257e0fc-32a1-4bc0-a147-ed918580d72a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Início]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="50" y="2" width="129" height="20" uuid="545e3c90-4113-4c85-bb93-0a2e3ee60845"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="48" height="20" uuid="6303770a-1881-4ccc-bfc1-e2a0d925961b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="2" width="285" height="20" uuid="6973b79c-1f86-43cf-b7c3-e47ec2ab2b3d"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{obsmuda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="2" width="260" height="20" uuid="44807d5b-45cb-422f-924e-ea02080277bb"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{obs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="742" y="2" width="60" height="20" uuid="057a960d-a80b-4a56-8eaa-6f5e1af5bbaf"/>
+				<textFieldExpression><![CDATA[$F{datainicio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="680" y="3" width="80" height="20" uuid="d5445aba-3f32-4086-8ca0-8ae0c461792d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="760" y="3" width="40" height="20" uuid="d3ced98f-2ba5-4dbd-8459-2a1759d18465"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

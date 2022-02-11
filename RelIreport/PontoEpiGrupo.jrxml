@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PontoEpi" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d3e312b-332f-46d4-8d92-82aa4530bd75">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT DISTINCT ON (c.matricula)
+        c.matricula, c.nome, c.funcao, c.contrato, c.periodo, e.dataentrega, e.tipodeponto, e.obs, e.situacao
+       FROM colaborador c LEFT JOIN entrega e ON c.id_colaborador = e.id_colaborador]]>
+	</queryString>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="funcao" class="java.lang.String"/>
+	<field name="contrato" class="java.lang.String"/>
+	<field name="periodo" class="java.lang.String"/>
+	<field name="dataentrega" class="java.lang.String"/>
+	<field name="tipodeponto" class="java.lang.String"/>
+	<field name="obs" class="java.lang.String"/>
+	<field name="situacao" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="28" width="42" height="20" uuid="adc2531e-8409-4950-aeb1-e434b49e281e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Período]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="4" width="355" height="24" uuid="0c69ddd3-013f-4aaa-94fb-3e115e1e1c83"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[ Situação Ponto Por Grupo de Contrato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="45" y="28" width="100" height="20" uuid="8cae2d56-222c-4292-9a95-0bce48e66a12"/>
+				<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="28" width="799" height="1" uuid="9520eb3f-3869-4c8f-b0e9-edfdac99416a"/>
+			</line>
+			<line>
+				<reportElement x="0" y="3" width="799" height="1" uuid="9486e287-20e3-4864-8072-b64e20b42256"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="8" width="45" height="20" uuid="633a2787-345b-4b7e-90f2-ec665e8f774d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="9" width="58" height="20" uuid="5b8b6905-e6ef-4a1f-b2f6-119a49bb861e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="9" width="92" height="20" uuid="419861f3-a021-4338-85ca-5597cfa5b343"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Função]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="574" y="9" width="32" height="20" uuid="0b6a61be-22f8-4b90-a0f5-144cac2f48c6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Obs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="661" y="8" width="74" height="20" uuid="b6d8a297-5c5a-4c00-892f-b0e5397b83c4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Ponto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="750" y="8" width="52" height="20" uuid="428fdcc6-a8ad-4128-b8a9-1d6ab9e7b537"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="9" width="45" height="14" uuid="8be01918-99d8-4208-bef9-0f56745dd3b3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contrato]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="45" height="14" uuid="a54434c0-76e7-4f4b-8804-059af68fa63e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="172" height="14" uuid="240ba83e-f7dd-4073-8c57-d185dbe69431"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="458" y="0" width="106" height="14" uuid="0d39ef3d-1e76-494b-8dbf-c42d64a31279"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funcao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="564" y="0" width="100" height="14" uuid="e225b0ed-1ebd-4b3b-aba5-bbc34b91f31b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{obs}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="750" y="0" width="49" height="14" uuid="d18676b3-603b-4cae-ae62-8af3c8110fec"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="664" y="0" width="86" height="14" uuid="a2a32b98-da00-44f2-a127-5bcaf624ce5f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipodeponto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="52" y="0" width="214" height="14" uuid="d5181333-a3e1-40d5-8832-4b05b10bc657"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="679" y="3" width="80" height="20" uuid="5d4ef872-5041-4a8f-a41d-aa325c712dec"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="759" y="3" width="40" height="20" uuid="959fc351-e875-4f4c-a8b9-a48fa4b2ad0f"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="25">
+			<textField>
+				<reportElement x="681" y="3" width="80" height="20" uuid="00d098cf-e11d-4dec-bdcc-83a2ef9e779b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="761" y="3" width="40" height="20" uuid="6ffca271-1249-4d0c-a474-ef423eaaa60d"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="55">
+			<staticText>
+				<reportElement x="669" y="30" width="89" height="20" uuid="0108523e-ba3f-4fa3-b1ac-dda54228e45d"/>
+				<text><![CDATA[Total de Registros:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="759" y="30" width="44" height="20" uuid="b627d8b3-0e3c-4990-81f7-bc07cb677e73"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="669" y="49" width="130" height="1" uuid="bfec5e74-6f0d-4066-87d4-caaf7580094d"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
